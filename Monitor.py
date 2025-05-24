@@ -7,12 +7,6 @@ from datetime import datetime
 def monitor_performance(interval_seconds=5, log_file="performance_log.csv", duration_minutes=None):
     """
     Monitors CPU and memory usage and logs it to a CSV file.
-
-    Args:
-        interval_seconds (int): The interval in seconds between each data collection.
-        log_file (str): The name of the CSV file to log data to.
-        duration_minutes (int, optional): The total duration in minutes to monitor.
-                                          If None, monitoring runs indefinitely until manually stopped.
     """
     print(f"Starting system performance monitoring. Data will be logged to '{log_file}'.")
     print(f"Monitoring interval: {interval_seconds} seconds.")
@@ -73,13 +67,6 @@ def monitor_performance(interval_seconds=5, log_file="performance_log.csv", dura
         print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
-    # Example usage:
-    # Monitor every 5 seconds, log to 'performance_log.csv', for 1 minute (60 seconds)
-    # monitor_performance(interval_seconds=5, log_file="performance_log.csv", duration_minutes=1)
-
-    # Monitor every 2 seconds, log to 'my_system_stats.csv', indefinitely
+   
     monitor_performance(interval_seconds=2, log_file="my_system_stats.csv")
 
-    # To run for a specific duration, uncomment the first example and comment the second one.
-    # For example, to monitor for 5 minutes at 10-second intervals:
-    # monitor_performance(interval_seconds=10, log_file="long_run_performance.csv", duration_minutes=5)
